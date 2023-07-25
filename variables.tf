@@ -4,8 +4,9 @@ variable "name" {
 }
 
 variable "organization" {
-  description = "(Required) Name of the organization"
+  description = "(Optional) Name of the organization"
   type        = string
+  default     = null
 }
 
 variable "description" {

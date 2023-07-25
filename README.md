@@ -114,7 +114,7 @@ It is possible to integrate this module with [tfe-variable-set module](https://r
 
 | Name | Version |
 |------|---------|
-| <a name="provider_tfe"></a> [tfe](#provider\_tfe) | >= 0.40.0 |
+| <a name="provider_tfe"></a> [tfe](#provider\_tfe) | 0.47.0 |
 
 ## Modules
 
@@ -151,7 +151,7 @@ No modules.
 | <a name="input_notification_slack_configuration"></a> [notification\_slack\_configuration](#input\_notification\_slack\_configuration) | (Optional) List of notification configuration of 'Slack' type<br><br>  Item syntax:<br>  [<br>    {<br>      name = "webhook\_1"<br>      enabled = true<br>      url = "https://hooks.slack.com/services/VeryLongHash1"<br>      triggers = [<br>        "created",<br>        "planning",<br>        "needs\_attention",<br>        "applying",<br>        "completed",<br>        "errored"<br>      ]<br>    },<br>    {<br>      name = "webhook\_2"<br>      enabled = false<br>      url = "https://hooks.slack.com/services/VeryLongHash2"<br>    },<br>    {<br>      ...<br>    }<br>  ] | <pre>list(object({<br>    name     = string,<br>    enabled  = bool,<br>    url      = string,<br>    triggers = list(string) #Optional<br>  }))</pre> | `[]` | no |
 | <a name="input_notification_webhook_configuration"></a> [notification\_webhook\_configuration](#input\_notification\_webhook\_configuration) | (Optional) List of notification configuration of 'Webhook' type<br><br>  Item syntax:<br>  [<br>    {<br>      name = "webhook\_1"<br>      enabled = true<br>      token = "mysupersecrettoken1"<br>      url = "https://myendpoint1.domain.ext"<br>      triggers = [<br>        "created",<br>        "planning",<br>        "needs\_attention",<br>        "applying",<br>        "completed",<br>        "errored"<br>      ]<br>    },<br>    {<br>      name = "webhook\_2"<br>      enabled = false<br>      token = "mysupersecrettoken2"<br>      url = "https://myendpoint2.domain.ext"<br>    },<br>    {<br>      ...<br>    }<br>  ] | <pre>list(object({<br>    name     = string,<br>    enabled  = bool,<br>    token    = string,<br>    url      = string,<br>    triggers = list(string) #Optional<br>  }))</pre> | `[]` | no |
 | <a name="input_oauth_token_id"></a> [oauth\_token\_id](#input\_oauth\_token\_id) | (Optional) The token ID of the VCS connection to use | `string` | `""` | no |
-| <a name="input_organization"></a> [organization](#input\_organization) | (Required) Name of the organization | `string` | n/a | yes |
+| <a name="input_organization"></a> [organization](#input\_organization) | (Optional) Name of the organization | `string` | `null` | no |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | (Optional) ID of the project where the workspace should be created | `string` | `""` | no |
 | <a name="input_queue_all_runs"></a> [queue\_all\_runs](#input\_queue\_all\_runs) | (Optional) Whether the workspace should start automatically performing runs immediately after its creation | `bool` | `true` | no |
 | <a name="input_remote_state_consumer_ids"></a> [remote\_state\_consumer\_ids](#input\_remote\_state\_consumer\_ids) | (Optional) The set of workspace IDs set as explicit remote state consumers for the given workspace | `list(string)` | `[]` | no |
