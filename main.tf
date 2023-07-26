@@ -88,14 +88,15 @@ resource "tfe_workspace" "this" {
   force_delete                  = var.force_delete
 
   dynamic "vcs_repo" {
-    for_each = length(var.vcs_repository_identifier) > 0 && length(var.oauth_token_id) > 0 ? [1] : []
+    for_each = length(var.vcs_repository_identifier) > 0 ? [1] : []
 
     content {
-      identifier         = var.vcs_repository_identifier
-      branch             = var.vcs_repository_branch
-      ingress_submodules = var.vcs_repository_ingress_submodules
-      oauth_token_id     = var.oauth_token_id
-      tags_regex         = var.vcs_repository_tags_regex
+      identifier                 = var.vcs_repository_identifier
+      branch                     = var.vcs_repository_branch
+      ingress_submodules         = var.vcs_repository_ingress_submodules
+      oauth_token_id             = var.oauth_token_id
+      github_app_installation_id = var.github_app_installation_id
+      tags_regex                 = var.vcs_repository_tags_regex
     }
   }
 }

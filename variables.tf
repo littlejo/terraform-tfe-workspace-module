@@ -142,7 +142,13 @@ variable "vcs_repository_ingress_submodules" {
 variable "oauth_token_id" {
   description = "(Optional) The token ID of the VCS connection to use"
   type        = string
-  default     = ""
+  default     = null
+}
+
+variable "github_app_installation_id" {
+  description = "(Optional) The token ID of the VCS connection to use"
+  type        = string
+  default     = null
 }
 
 variable "vcs_repository_tags_regex" {
